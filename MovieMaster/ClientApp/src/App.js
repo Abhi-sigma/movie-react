@@ -19,7 +19,6 @@ function App() {
 
 	const clickedSuggestionHandler = (data,query) => {
     set_clickedSuggestion(data);
-    //sanish regmi
 
 	}
 
@@ -32,7 +31,7 @@ function App() {
   return (
     <Router>
         <Switch>
-            <Route path="/admin">
+            <Route exact path="/admin">
                 <AdminSearch/>
             </Route>
             <Route exact path="/">

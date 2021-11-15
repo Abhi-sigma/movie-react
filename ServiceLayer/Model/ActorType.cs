@@ -14,6 +14,6 @@ namespace ServiceLayer.Model
         [Key, Column(Order = 0)]
         public int ActorTypeId { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Actor> Actors { get; set; }
+        //public virtual ICollection<Actor> Actors { get; set; }
     }
 }

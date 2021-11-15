@@ -11,7 +11,7 @@ namespace ServiceLayer
             var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
             configBuilder.AddJsonFile(path, false);
             var root = configBuilder.Build();
-            var appSetting = root.GetSection("ConnectionStrings:DefaultConnection");
+            var appSetting = root.GetSection("ConnectionStrings:Madrasimovies");
             sqlConnection = appSetting.Value;
 
         }

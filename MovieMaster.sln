@@ -1,9 +1,14 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMaster", "MovieMaster\MovieMaster.csproj", "{D91E875E-E7B7-42A6-AC96-706759FAD295}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieMaster", "MovieMaster\MovieMaster.csproj", "{D91E875E-E7B7-42A6-AC96-706759FAD295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{0E5AA966-9D98-4AB5-82AC-223CC228B84F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{0E5AA966-9D98-4AB5-82AC-223CC228B84F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestsMovieWorld", "UnitTestsMovieWorld\UnitTestsMovieWorld.csproj", "{44892CB1-3189-4DEB-A716-CD452549A027}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbExplorer", "DbExplorer\DbExplorer.csproj", "{84A8C3F4-12C0-45F6-A099-A65A856610D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +24,19 @@ Global
 		{0E5AA966-9D98-4AB5-82AC-223CC228B84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E5AA966-9D98-4AB5-82AC-223CC228B84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E5AA966-9D98-4AB5-82AC-223CC228B84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44892CB1-3189-4DEB-A716-CD452549A027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44892CB1-3189-4DEB-A716-CD452549A027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44892CB1-3189-4DEB-A716-CD452549A027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44892CB1-3189-4DEB-A716-CD452549A027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A8C3F4-12C0-45F6-A099-A65A856610D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A8C3F4-12C0-45F6-A099-A65A856610D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A8C3F4-12C0-45F6-A099-A65A856610D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A8C3F4-12C0-45F6-A099-A65A856610D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E78FFD4F-074C-4411-AE44-9A58F61C06D4}
 	EndGlobalSection
 EndGlobal

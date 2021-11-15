@@ -22,3 +22,15 @@
 /Users/sanishregmi/Projects/MovieMaster/ServiceLayer/obj/Debug/netcoreapp3.1/ServiceLayer.dll
 /Users/sanishregmi/Projects/MovieMaster/ServiceLayer/obj/Debug/netcoreapp3.1/ServiceLayer.pdb
 /Users/sanishregmi/Projects/MovieMaster/ServiceLayer/obj/Debug/netcoreapp3.1/ServiceLayer.genruntimeconfig.cache
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\bin\Debug\netcoreapp3.1\ServiceLayer.deps.json
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\bin\Debug\netcoreapp3.1\ServiceLayer.runtimeconfig.json
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\bin\Debug\netcoreapp3.1\ServiceLayer.runtimeconfig.dev.json
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\bin\Debug\netcoreapp3.1\ServiceLayer.dll
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\bin\Debug\netcoreapp3.1\ServiceLayer.pdb
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.csprojAssemblyReference.cache
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.AssemblyInfoInputs.cache
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.AssemblyInfo.cs
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.csproj.CoreCompileInputs.cache
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.dll
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.pdb
+H:\MOVIE REACT BACKEND\MovieMaster\ServiceLayer\obj\Debug\netcoreapp3.1\ServiceLayer.genruntimeconfig.cache

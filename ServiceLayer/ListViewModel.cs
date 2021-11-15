@@ -13,6 +13,8 @@ namespace ServiceLayer
         }
 
         public List<Actor> Actors { get; set; }
-        public List<Movie> Movies { get; set; }
+        public List<Movies> Movies { get; set; }
+        public List<MovieDetail> MovieDetail { get; set; }
     }
+    
 }

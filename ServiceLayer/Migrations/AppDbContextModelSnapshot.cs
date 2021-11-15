@@ -15,7 +15,7 @@ namespace ServiceLayer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,13 +29,13 @@ namespace ServiceLayer.Migrations
                     b.Property<int>("ActorTypeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("ImageLink")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("InsertedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ActorId");
@@ -43,56 +43,6 @@ namespace ServiceLayer.Migrations
                     b.HasIndex("ActorTypeId");
 
                     b.ToTable("Actors");
-
-                    b.HasData(
-                        new
-                        {
-                            ActorId = 1,
-                            ActorTypeId = 1,
-                            FirstName = "Allu",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 123, DateTimeKind.Local).AddTicks(5930),
-                            LastName = "Arjun"
-                        },
-                        new
-                        {
-                            ActorId = 2,
-                            ActorTypeId = 1,
-                            FirstName = "Ravi",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(510),
-                            LastName = "Teja"
-                        },
-                        new
-                        {
-                            ActorId = 3,
-                            ActorTypeId = 1,
-                            FirstName = "Shree",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(530),
-                            LastName = "Ram"
-                        },
-                        new
-                        {
-                            ActorId = 4,
-                            ActorTypeId = 1,
-                            FirstName = "Jnr",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(530),
-                            LastName = "Ntr"
-                        },
-                        new
-                        {
-                            ActorId = 5,
-                            ActorTypeId = 1,
-                            FirstName = "Mahesh",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(530),
-                            LastName = "Babu"
-                        },
-                        new
-                        {
-                            ActorId = 6,
-                            ActorTypeId = 1,
-                            FirstName = "Kamal",
-                            InsertedDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(540),
-                            LastName = "Hasan"
-                        });
                 });
 
             modelBuilder.Entity("ServiceLayer.Model.ActorType", b =>
@@ -108,55 +58,6 @@ namespace ServiceLayer.Migrations
                     b.HasKey("ActorTypeId");
 
                     b.ToTable("ActorTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            ActorTypeId = 1,
-                            Name = "Actor"
-                        });
-                });
-
-            modelBuilder.Entity("ServiceLayer.Model.Movie", b =>
-                {
-                    b.Property<int>("MovieId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("InsertedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("MovieId");
-
-                    b.ToTable("Movies");
-
-                    b.HasData(
-                        new
-                        {
-                            MovieId = 1,
-                            InsertedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Kalyanam",
-                            Rating = 4,
-                            ReleaseDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(2750)
-                        },
-                        new
-                        {
-                            MovieId = 2,
-                            InsertedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Don",
-                            Rating = 5,
-                            ReleaseDate = new DateTime(2020, 7, 6, 22, 16, 1, 137, DateTimeKind.Local).AddTicks(3470)
-                        });
                 });
 
             modelBuilder.Entity("ServiceLayer.Model.MovieDetail", b =>
@@ -175,13 +76,93 @@ namespace ServiceLayer.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TagId")
+                        .HasColumnType("int");
+
                     b.HasKey("MovieDetailId");
 
                     b.HasIndex("ActorId");
 
                     b.HasIndex("MovieId");
 
+                    b.HasIndex("TagId");
+
                     b.ToTable("MovieDetails");
+                });
+
+            modelBuilder.Entity("ServiceLayer.Model.Movies", b =>
+                {
+                    b.Property<int>("MovieId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Actors")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AlternateName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Awards")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Director")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Plot")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Poster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Released")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YouTubeLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("imdbId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("imdbrating")
+                        .HasColumnType("int");
+
+                    b.HasKey("MovieId");
+
+                    b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("ServiceLayer.Model.Tags", b =>
+                {
+                    b.Property<int>("TagId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TagsName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TagId");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("ServiceLayer.Model.Actor", b =>
@@ -201,11 +182,15 @@ namespace ServiceLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ServiceLayer.Model.Movie", "Movie")
-                        .WithMany()
+                    b.HasOne("ServiceLayer.Model.Movies", "Movie")
+                        .WithMany("MovieDetails")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ServiceLayer.Model.Tags", "Tag")
+                        .WithMany("MoviDetails")
+                        .HasForeignKey("TagId");
                 });
 #pragma warning restore 612, 618
         }

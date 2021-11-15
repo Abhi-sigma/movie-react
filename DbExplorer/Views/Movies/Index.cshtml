@@ -1,0 +1,74 @@
+﻿@model ServiceLayer.ListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<form asp-action="Index" method="get">
+    <input type="text" name="search" value="" />
+    <button class="btn btn-success" type="submit">Search</button>
+</form>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Actors)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movies) {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+                
+                <img style="width:50px;height:50px"  src=@item.Poster.ToString()/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @foreach (var actors in item.MovieDetails)
+                {
+
+                    if (actors.Actor.ActorTypeId != 1001)
+                    {
+                        @Html.DisplayFor(modelItem => actors.Actor.Name)
+
+                    }
+
+
+
+
+                }
+            </td>
+
+            <td>
+            <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a> |
+            <form action>
+                <select name="home">
+                    <option value="add">Add to Homepage</option>
+                    <option value="remove">Add to Homepage</option>
+
+                </select>
+            </form>
+
+        </td>
+        </tr>
+}
+    </tbody>
+</table>
